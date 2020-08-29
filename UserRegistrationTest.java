@@ -33,9 +33,22 @@ public class UserRegistrationTest {
         boolean emailId = UserRegistration.validateEmailId("abc@gail.com");
         Assert.assertTrue(emailId);
     }
+
     @Test
     public void givenEmailId_WhenImproper_ShouldReturnFalse() {
         boolean emailId = UserRegistration.validateEmailId("abcgail.com");
         Assert.assertFalse(emailId);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
+        boolean mobileNumber = UserRegistration.validateMobileNumber("91 8605863744");
+        Assert.assertTrue(mobileNumber);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenImproper_ShouldReturnFalse() {
+        boolean mobileNumber = UserRegistration.validateMobileNumber("91 18605863744");
+        Assert.assertFalse(mobileNumber);
     }
 }
